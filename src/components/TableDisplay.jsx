@@ -63,24 +63,24 @@ nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour, twentyfive, twe
 thirtythree, thirtyfour, thirtyfive, thirtysix, thirtyseven, thirtyeight, thirtynine, fourty, fourtyone, fourtytwo, fourtythree, fourtyfour, fourtyfive,
 fourtysix, fourtyseven, fourtyeight, fourtynine, fifty, fiftyone, fiftytwo]
 
-const PlayersEven = (props) => {
-    const {players} = props
-    let evens = players.filter(player => player.seat_number % 2 === 0)
+const TableDisplay = (props) => {
+    const {table} = props
+    const {pot, community_cards} = table
+    console.log(pot)
+    console.log(community_cards)
 
-    return (
-      <div className = "overlayMid midRight">
-        {evens.map ((even) =>
-          <div className="playerBox" key={even.seat_number}>
-            <div className="name">{even.name}</div>
-            <div className="position">{even.position}</div>
-            <div className="hand">
-              <img  className="cards" src={cards[even.hand[0]]} alt="" />
-              <img className="cards" src={cards[even.hand[1]]} alt="" />
+        return (
+        <div className="overlayBot">
+            <div className="tableContainer">
+                <div className="communityCards">
+                    {community_cards.map((community_card) => 
+                        <img className="bucketCards" src={cards[community_card]} key={community_card} />
+                    )}
+                </div>
+                <div className="pot">Pot: ${pot}</div>
             </div>
-          </div>
-        )}
-      </div>
+        </div>
     )
-  }
+}
 
-  export default PlayersEven 
+export default TableDisplay

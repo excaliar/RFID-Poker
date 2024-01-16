@@ -5,7 +5,7 @@ import './index.css';
 
 function Main() {
   const [players, setPlayers] = useState([]);
-  const [table, setTable] = useState([]);
+  const [table, setTable] = useState({pot: 0, community_cards: []});
 
   useEffect(() => {
     // Add a cache-busting query parameter
@@ -23,7 +23,7 @@ function Main() {
   }, []);
 
   return (
-    <App players={players} />
+    <App players={players} table={table} />
   );
 }
 
