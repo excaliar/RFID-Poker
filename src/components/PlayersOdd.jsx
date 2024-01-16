@@ -72,6 +72,7 @@ const PlayersOdd = (props) => {
         {odds.map((odd) =>
           <div className="playerBox" key={odd.seat_number}>
             <div className='name'>{odd.name}</div>
+            <div className='position'>{odd.position}</div>
             <div className="hand">
               <img  className="cards" src={cards[odd.hand[0]]} alt="" />
               <img className="cards" src={cards[odd.hand[1]]} alt="" />
