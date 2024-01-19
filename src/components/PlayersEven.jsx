@@ -65,7 +65,12 @@ fourtysix, fourtyseven, fourtyeight, fourtynine, fifty, fiftyone, fiftytwo]
 
 const PlayersEven = (props) => {
     const {players} = props
-    let evens = players.filter(player => player.seat_number % 2 === 0)
+    let evens = players.filter(player => {
+      const condition1 = player.seat_number % 2 === 0;
+      const condition2 = player.inHand === true;
+
+      return condition1 && condition2
+    })
 
     return (
       <div className = "overlayMid midRight">
