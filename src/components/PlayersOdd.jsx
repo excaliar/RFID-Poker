@@ -65,7 +65,12 @@ fourtysix, fourtyseven, fourtyeight, fourtynine, fifty, fiftyone, fiftytwo]
 
 const PlayersOdd = (props) => {
     const {players} = props
-    let odds = players.filter(player => player.seat_number%2)
+    let odds = players.filter(player => {
+      const condition1 = player.seat_number%2;
+      const condition2 = player.inHand === true
+
+      return condition1 && condition2
+    })
   
     return (
       <div className = "overlayMid midLeft">
