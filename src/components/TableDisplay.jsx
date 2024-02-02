@@ -66,8 +66,6 @@ fourtysix, fourtyseven, fourtyeight, fourtynine, fifty, fiftyone, fiftytwo]
 const TableDisplay = (props) => {
     const {table} = props
     const {pot, community_cards} = table
-    console.log(pot)
-    console.log(community_cards)
 
         return (
         <div className="overlayBot">

@@ -15,9 +15,7 @@ function Main() {
         .then(data => {
           const relevantData = data[1]; // Access the second index of the array
           const tableData = data[0]
-          console.log(relevantData); // Print the relevant data
           setPlayers(relevantData); // Use the relevant data to set the state
-          console.log(tableData);
           setTable(tableData)
         })
         .catch(error => console.error('Error:', error));
