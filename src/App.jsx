@@ -4,6 +4,7 @@ import TableDisplay from "./components/TableDisplay"
 
 const App = (props) => {
   const { players, table } = props
+
   return (
     <div>
       <div className="overlayTop">

@@ -65,9 +65,17 @@ fourtysix, fourtyseven, fourtyeight, fourtynine, fifty, fiftyone, fiftytwo]
 
 const PlayersOdd = (props) => {
     const {players} = props
-    let odds = players.filter(player => {
-      const condition1 = player.seat_number%2;
-      const condition2 = player.inHand === true
+    
+    const arrs = []
+    const limit = Object.keys(players).length
+  
+    for (let i = 1; i < limit + 1; i++) {
+      arrs.push(players[i])
+    }
+
+    let odds = arrs.filter(arr => {
+      const condition1 = arr.seat_number%2;
+      const condition2 = arr.inHand === true
 
       return condition1 && condition2
     })
