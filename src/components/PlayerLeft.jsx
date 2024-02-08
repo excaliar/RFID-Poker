@@ -63,7 +63,7 @@ nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour, twentyfive, twe
 thirtythree, thirtyfour, thirtyfive, thirtysix, thirtyseven, thirtyeight, thirtynine, fourty, fourtyone, fourtytwo, fourtythree, fourtyfour, fourtyfive,
 fourtysix, fourtyseven, fourtyeight, fourtynine, fifty, fiftyone, fiftytwo]
 
-const PlayersEven = (props) => {
+const PlayersLeft = (props) => {
     const {players} = props
 
     const arrs = []
@@ -73,41 +73,40 @@ const PlayersEven = (props) => {
       arrs.push(players[i])
     }
 
-    let evens = arrs.filter(arr => {
-      const condition1 = arr.seat_number % 2 === 0;
+    let lefts = arrs.filter(arr => {
       const condition2 = arr.inHand === true;
 
-      return condition1 && condition2
+      return condition2
     })
 
     return (
-      <div className = "overlayMid midLeft">
-        {evens.map((even) =>
-          <div className="playerBox" key={even.seat_number}>
-            <div className="hand">
-              <img  className="cards" src={cards[even.hand[0]]} alt="" />
-              <img className="cards" src={cards[even.hand[1]]} alt="" />
-            </div>
-            <div className="playerInfo">
-              <div className="playerInfoTop">
-                <div className='playerName'>{even.name}</div>
-                {even.position === 'D' ? (
-                  <div className='button'>{even.position}</div>
+        <div className = "overlayMid midLeft">
+          {lefts.map((left) =>
+            <div className="playerBox" key={left.seat_number}>
+              <div className="hand">
+                <img  className="cards" src={cards[left.hand[0]]} alt="" />
+                <img className="cards" src={cards[left.hand[1]]} alt="" />
+              </div>
+              <div className="playerInfo">
+                <div className="playerInfoTop">
+                  <div className='playerName'>{left.name}</div>
+                  {left.position === 'D' ? (
+                    <div className='button'>{left.position}</div>
+                  ) : (
+                    <div className='playerPosition'>{left.position}</div>
+                  )}
+                </div>
+                {left.action === "NA" ? (
+                  <div className="stackInfo">${left.stack_size}</div>
                 ) : (
-                  <div className='playerPosition'>{even.position}</div>
+                  <div className="actionInfo">{left.action}</div>
                 )}
               </div>
-              {even.action === "NA" ? (
-                <div className="stackInfo">${even.stack_size}</div>
-              ) : (
-                <div className="actionInfo">{even.action}</div>
-              )}
+              
             </div>
-            
-          </div>
-        )}
-      </div>
-    )
-  }
+          )}
+        </div>
+      )
+}
 
-  export default PlayersEven 
+export default PlayersLeft

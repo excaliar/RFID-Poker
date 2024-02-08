@@ -111,6 +111,18 @@ body {
     font-size: 18px;
 }
 
+.actionInfo {
+    text-align: center;
+}
+
+.overlayBotRight {
+    height: 15vh;
+    display:flex;
+    justify-content: end;
+    margin-right: 50px;
+}
+
+
 
 
 

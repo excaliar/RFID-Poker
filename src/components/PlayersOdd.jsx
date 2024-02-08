@@ -97,7 +97,11 @@ const PlayersOdd = (props) => {
                   <div className='playerPosition'>{odd.position}</div>
                 )}
               </div>
-              <div className="stackInfo">${odd.stack_size}</div>
+              {odd.action === "NA" ? (
+                <div className="stackInfo">${odd.stack_size}</div>
+              ) : (
+                <div className="actionInfo">{odd.action}</div>
+              )}
             </div>
             
           </div>
