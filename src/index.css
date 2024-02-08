@@ -31,23 +31,16 @@ body {
 .playerBox {
     border-style: solid;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 9vw;
-    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px #888888;
 }
 
 .cards {
     width: 3vw;
-    margin-bottom: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
 }
 
 .hand {
     display: flex;
-    gap: 10px;
 }
 
 .name {

@@ -84,12 +84,18 @@ const PlayersOdd = (props) => {
       <div className = "overlayMid midLeft">
         {odds.map((odd) =>
           <div className="playerBox" key={odd.seat_number}>
-            <div className='name'>{odd.name}</div>
-            <div className='position'>{odd.position}</div>
             <div className="hand">
               <img  className="cards" src={cards[odd.hand[0]]} alt="" />
               <img className="cards" src={cards[odd.hand[1]]} alt="" />
             </div>
+            <div className="playerInfo">
+              <div className="playerInfoTop">
+                <div className='name'>{odd.name}</div>
+                <div className='position'>{odd.position}</div>
+              </div>
+              <div className="stackInfo">${odd.stack_size}</div>
+            </div>
+            
           </div>
         )}
       </div>

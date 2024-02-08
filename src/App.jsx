@@ -11,8 +11,7 @@ const App = (props) => {
       </div>
       <div className="middle">
         <PlayersOdd players = {players}></PlayersOdd>
-        <div className="stream">
-        </div>
+        <div className="stream"></div>
         <PlayersEven players={players}></PlayersEven>
       </div>
       <TableDisplay table={table}/>

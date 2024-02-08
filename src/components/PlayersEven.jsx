@@ -81,15 +81,21 @@ const PlayersEven = (props) => {
     })
 
     return (
-      <div className = "overlayMid midRight">
-        {evens.map ((even) =>
+      <div className = "overlayMid midLeft">
+        {evens.map((even) =>
           <div className="playerBox" key={even.seat_number}>
-            <div className="name">{even.name}</div>
-            <div className="position">{even.position}</div>
             <div className="hand">
               <img  className="cards" src={cards[even.hand[0]]} alt="" />
               <img className="cards" src={cards[even.hand[1]]} alt="" />
             </div>
+            <div className="playerInfo">
+              <div className="playerInfoTop">
+                <div className='name'>{even.name}</div>
+                <div className='position'>{even.position}</div>
+              </div>
+              <div className="stackInfo">${even.stack_size}</div>
+            </div>
+            
           </div>
         )}
       </div>
