@@ -90,8 +90,12 @@ const PlayersEven = (props) => {
             </div>
             <div className="playerInfo">
               <div className="playerInfoTop">
-                <div className='name'>{even.name}</div>
-                <div className='position'>{even.position}</div>
+                <div className='playerName'>{even.name}</div>
+                {even.position === 'D' ? (
+                  <div className='button'>{even.position}</div>
+                ) : (
+                  <div className='playerPosition'>{even.position}</div>
+                )}
               </div>
               <div className="stackInfo">${even.stack_size}</div>
             </div>

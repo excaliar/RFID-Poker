@@ -90,8 +90,12 @@ const PlayersOdd = (props) => {
             </div>
             <div className="playerInfo">
               <div className="playerInfoTop">
-                <div className='name'>{odd.name}</div>
-                <div className='position'>{odd.position}</div>
+                <div className='playerName'>{odd.name}</div>
+                {odd.position === 'D' ? (
+                  <div className='button'>{odd.position}</div>
+                ) : (
+                  <div className='playerPosition'>{odd.position}</div>
+                )}
               </div>
               <div className="stackInfo">${odd.stack_size}</div>
             </div>
